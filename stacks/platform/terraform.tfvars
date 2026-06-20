@@ -3,6 +3,7 @@ project_name = "hurban-platform"
 environment = "dev"
 
 ecr_repositories = [
+  "alloy-agent",
   "placeholder-api",
-  "alloy-agent"
+  "hu-user-api"
 ]
