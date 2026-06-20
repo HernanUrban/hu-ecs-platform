@@ -17,16 +17,16 @@ variable "otel_collector_endpoint" {
 
 variable "applications" {
   type = map(object({
-    ecr_repo_key      = string
-    image_tag         = string
-    cpu               = number
-    memory            = number
-    container_port    = number
-    desired_count     = optional(number, 1)
-    health_check_path = string
-    path_patterns     = list(string)
-    listener_priority = number
-    cloudmap_key      = string
+    ecr_repo_key          = string
+    image_tag             = string
+    cpu                   = number
+    memory                = number
+    container_port        = number
+    desired_count         = optional(number, 1)
+    health_check_path     = string
+    path_patterns         = list(string)
+    listener_priority     = number
+    cloudmap_key          = string
     environment_variables = optional(map(string), {})
   }))
 }

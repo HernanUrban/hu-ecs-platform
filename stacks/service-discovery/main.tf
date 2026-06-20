@@ -10,9 +10,9 @@ data "terraform_remote_state" "networking" {
 
 module "cloudmap" {
 
-  source = "../../modules/cloudmap"
+  source         = "../../modules/cloudmap"
   namespace_name = var.namespace_name
-  vpc_id = data.terraform_remote_state.networking.outputs.vpc_id
+  vpc_id         = data.terraform_remote_state.networking.outputs.vpc_id
 
   tags = var.tags
 
