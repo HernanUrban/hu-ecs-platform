@@ -26,5 +26,8 @@ applications = {
     path_patterns     = ["/user", "/user/*"]
     listener_priority = 200
     cloudmap_key      = "hu-user-api"
+
+    health_check_interval             = 40
+    health_check_grace_period_seconds = 30
   }
 }

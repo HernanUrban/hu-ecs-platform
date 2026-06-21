@@ -53,6 +53,12 @@ module "app" {
   listener_priority     = each.value.listener_priority
   service_registry_arn  = data.terraform_remote_state.service_discovery.outputs.service_arns[each.value.cloudmap_key]
 
+  health_check_interval             = each.value.health_check_interval
+  health_check_timeout              = each.value.health_check_timeout
+  health_check_healthy_threshold    = each.value.health_check_healthy_threshold
+  health_check_unhealthy_threshold  = each.value.health_check_unhealthy_threshold
+  health_check_grace_period_seconds = each.value.health_check_grace_period_seconds
+
   environment_variables = merge(
     {
       OTEL_SERVICE_NAME           = each.key

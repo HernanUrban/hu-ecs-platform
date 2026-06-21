@@ -59,6 +59,8 @@ resource "aws_ecs_service" "this" {
 
   desired_count = var.desired_count
 
+  health_check_grace_period_seconds = var.health_check_grace_period_seconds
+
   launch_type      = "FARGATE"
   platform_version = "LATEST"
 

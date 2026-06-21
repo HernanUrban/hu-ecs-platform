@@ -15,9 +15,13 @@ resource "aws_lb_target_group" "this" {
   vpc_id      = var.vpc_id
 
   health_check {
-    path     = var.health_check_path
-    matcher  = "200"
-    protocol = "HTTP"
+    path                = var.health_check_path
+    matcher             = "200"
+    protocol            = "HTTP"
+    interval            = var.health_check_interval
+    timeout             = var.health_check_timeout
+    healthy_threshold   = var.health_check_healthy_threshold
+    unhealthy_threshold = var.health_check_unhealthy_threshold
   }
 
   tags = local.common_tags
