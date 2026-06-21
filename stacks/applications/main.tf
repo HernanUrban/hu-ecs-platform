@@ -1,27 +1,27 @@
 data "terraform_remote_state" "networking" {
-
-  backend = "local"
-
+  backend = "s3"
   config = {
-    path = "../networking/terraform.tfstate"
+    bucket = "hu-platform-tfstate"
+    key    = "networking/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
 data "terraform_remote_state" "platform" {
-
-  backend = "local"
-
+  backend = "s3"
   config = {
-    path = "../platform/terraform.tfstate"
+    bucket = "hu-platform-tfstate"
+    key    = "platform/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
 data "terraform_remote_state" "service_discovery" {
-
-  backend = "local"
-
+  backend = "s3"
   config = {
-    path = "../service-discovery/terraform.tfstate"
+    bucket = "hu-platform-tfstate"
+    key    = "service-discovery/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 

@@ -1,11 +1,10 @@
 data "terraform_remote_state" "networking" {
-
-  backend = "local"
-
+  backend = "s3"
   config = {
-    path = "../networking/terraform.tfstate"
+    bucket = "hu-platform-tfstate"
+    key    = "networking/terraform.tfstate"
+    region = "us-east-1"
   }
-
 }
 
 module "cloudmap" {
