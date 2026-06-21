@@ -56,5 +56,8 @@ module "alloy" {
   service_registry_arn    = data.terraform_remote_state.service_discovery.outputs.service_arns["alloy"]
   grafana_secret_arn      = module.grafana_cloud_secret.secret_arn
   image                   = "${local.ecr_registry}/${var.alloy_ecr_repository}:${var.alloy_image_tag}"
+  cpu                     = var.alloy_cpu
+  memory                  = var.alloy_memory
+  desired_count           = var.alloy_desired_count
   tags                    = local.common_tags
 }

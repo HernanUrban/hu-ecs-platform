@@ -34,6 +34,21 @@ variable "image" {
   type = string
 }
 
+variable "cpu" {
+  type    = number
+  default = 256
+}
+
+variable "memory" {
+  type    = number
+  default = 512
+}
+
+variable "desired_count" {
+  type    = number
+  default = 1
+}
+
 variable "tags" {
   type    = map(string)
   default = {}

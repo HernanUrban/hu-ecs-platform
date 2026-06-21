@@ -1,5 +1,5 @@
 aws_region   = "us-east-1"
-project_name = "hurban"
+project_name = "hu-platform"
 environment  = "dev"
 
 applications = {
@@ -11,7 +11,7 @@ applications = {
     container_port    = 8080
     desired_count     = 1
     health_check_path = "/placeholder/actuator/health"
-    path_patterns     = ["/placeholder/*"]
+    path_patterns     = ["/placeholder", "/placeholder/*"]
     listener_priority = 100
     cloudmap_key      = "placeholder-api"
   },
@@ -23,8 +23,8 @@ applications = {
     container_port    = 8080
     desired_count     = 2
     health_check_path = "/user/actuator/health"
-    path_patterns     = ["/user/*"]
-    listener_priority = 100
+    path_patterns     = ["/user", "/user/*"]
+    listener_priority = 200
     cloudmap_key      = "hu-user-api"
   }
 }

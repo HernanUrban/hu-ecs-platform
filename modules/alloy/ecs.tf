@@ -3,7 +3,7 @@ resource "aws_ecs_service" "this" {
   name                               = "alloy"
   cluster                            = var.cluster_name
   task_definition                    = aws_ecs_task_definition.this.arn
-  desired_count                      = 1
+  desired_count                      = var.desired_count
   launch_type                        = "FARGATE"
   platform_version                   = "LATEST"
   enable_execute_command             = true
@@ -41,8 +41,8 @@ resource "aws_ecs_task_definition" "this" {
   family                   = "${local.name_prefix}-observability-alloy"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
-  cpu                      = 256
-  memory                   = 512
+  cpu                      = var.cpu
+  memory                   = var.memory
   execution_role_arn       = aws_iam_role.execution.arn
   task_role_arn            = aws_iam_role.task.arn
   runtime_platform {

@@ -213,4 +213,11 @@ resource "aws_security_group" "alloy" {
       "0.0.0.0/0"
     ]
   }
+
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${local.name_prefix}-alloy-sg"
+    }
+  )
 }

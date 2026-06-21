@@ -1,5 +1,5 @@
 aws_region   = "us-east-1"
-project_name = "hurban-platform"
+project_name = "hu-platform"
 environment  = "dev"
 
 ecr_repositories = [

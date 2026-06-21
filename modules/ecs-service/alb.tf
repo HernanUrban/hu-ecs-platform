@@ -1,9 +1,12 @@
 resource "aws_lb_target_group" "this" {
 
-  name = substr(
-    "${var.project_name}-${var.environment}-${var.service_name}-tg",
-    0,
-    32
+  name = trimsuffix(
+    substr(
+      "${var.project_name}-${var.environment}-${var.service_name}-tg",
+      0,
+      32
+    ),
+    "-"
   )
 
   port        = var.container_port

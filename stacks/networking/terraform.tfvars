@@ -1,5 +1,5 @@
 aws_region   = "us-east-1"
-project_name = "hurban-platform"
+project_name = "hu-platform"
 environment  = "dev"
 
 vpc_cidr = "10.0.0.0/16"
